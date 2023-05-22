@@ -19,8 +19,10 @@ while True:
         for i, boundingBox in enumerate(boundingBoxes):
             x, y, w, h = boundingBox["bbox"]
             # To avoid errors when an image is very close to the camera and gets out of bounds
-            if x < 0: x = 0
-            if y < 0: y = 0
+            if x < 0:
+                x = 0
+            if y < 0:
+                y = 0
             # Cropping image with: 'y' as starting height and 'y + h' as ending height... Alternatively, 'x' is the
             # same for width
             croppedFace = image[y:y + h, x:x + w]
